@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block tittle %}{{post.titulo}}{% endblock  %}
+{% block conteudo %}
+<div class="container d-flex justify-content-center">
+  <div class="card m-2" style="width: 75%;">
+    <h1 style="font-size: 3em;" class="card-tittle text-center text-danger">{{post.titulo}}</h1>
+    <img src="{{post.imagem.url}}" alt="{{post.titulo}}" class="card-img-top">
+    <div class="card-body">
+      <p class="card-text">{{post.conteudo}}</p>
+      <a href="{% url "post" post.id %}" class="text-danger"></a>
+    </div>
+  </div>
+</div>
+{% endblock conteudo %}

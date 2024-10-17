@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Início{% endblock title %}
+{% block conteudo %}
+<div class="container-fluid bg-danger">
+  <div class="container">
+    <div class="row g-0">
+      <div class="col-md-6 d-flex align-items-center">
+        <div class="card-body ">
+          <h1 style="font-size: 3.5em; padding: 32px 0;" class="text-white">Preventiva,  <br> seu blog para prevenir o inesperado.</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid" style="padding: 1px;">
+  <div class="container" >
+    <h2 class="text-center py-3 text-danger">O que é este site?</h2>
+    <p class="mt-1 mb-5" style="font-size: 1.3em;">
+      
+      Na Preventiva, compreendemos que as <a class="text-danger" href="{% url 'sexuais' %}">doenças sexualmente transmissíveis</a> são desafios complexos que impactam não apenas a saúde física, mas também o bem-estar emocional e psicológico de quem as enfrenta. Nosso objetivo é oferecer um espaço acolhedor e informativo, onde você pode encontrar análises detalhadas, orientações para <a class="text-danger" href="{% url 'help' %}">buscar ajuda</a> e formas de prevenção contra as doenças sexualmente transmissíveis.
+    </p>
+  </div>
+</div>
+
+{% endblock conteudo %}

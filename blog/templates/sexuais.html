@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Doenças e problemas{% endblock title %}
+{% block conteudo %}    
+    <div class="container-fluid bg-danger d-flex justify-content-center align-items-center py-5">
+        <h1 style="font-size: 3.5em;" class="text-white text-center">Previna o inesperado, faça com consciência.</h1>
+    </div>
+
+    <div class="container-fluid py-4">
+      <div class="container">
+        <h1 class="text-center text-danger">O que são DST's?</h1>
+        <p class="py-4" style="font-size: 1.2em;">
+          As Doenças Sexualmente Transmissíveis (DSTs), também chamadas de Infecções Sexualmente Transmissíveis (ISTs), 
+          são infecções causadas por vírus, bactérias ou outros microrganismos, que são transmitidas principalmente através do contato sexual desprotegido (sem o uso de preservativo) 
+          com uma pessoa infectada. Essas doenças podem afetar tanto homens quanto mulheres e, em alguns casos, 
+          podem ser transmitidas também de mãe para filho durante o parto ou amamentação, e por compartilhamento de seringas ou agulhas contaminadas.
+          <br/>
+          <a href="{% url 'help' %}" class="text-danger">É essencial buscar ajuda profissional</a> o 
+          quanto antes para prevenir complicações graves.
+
+        </p>
+
+        <!-- Cards -->
+        <div class="d-flex flex-wrap justify-content-evenly">
+        {% for post in posts %}
+        <div class="card m-2" style="max-width: 25rem;">
+          <img src="{{post.imagem.url}}" alt="{{post.titulo}}" class="card-img-top">
+          <div class="card-body">
+            <h3 class="card-tittle text-center text-danger">{{post.titulo}}</h3>
+            <p class="card-text">{{post.descricao}}</p>
+            <a href="{% url "post" post.id %}" class="text-danger">Ver postagem</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      </div>
+    </div>
+{% endblock conteudo %}
